@@ -1,0 +1,18 @@
+prodcut {
+    1)id
+    2)name
+    3)price
+}
+
+
+Item{
+    1)prodcut
+    2)quantity
+    3)price
+}
+
+
+cart{
+    1)Item
+    2)total
+}

@@ -12,8 +12,8 @@ int main()
     }
 
     buy = arr[0];
-    int sell = arr[0];
-    for(int i=0;i<n;i++)
+    int sell = 0;
+    for(int i=1;i<n;i++)
     {
        if(arr[i] < buy)
        {
@@ -25,7 +25,8 @@ int main()
     {
         if(buy<arr[i])
         {
-            sell = i;
+            buy = arr[i];
+            sell = i+1;
         }
     }
     printf("%d",sell);

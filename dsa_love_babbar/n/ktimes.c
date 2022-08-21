@@ -2,7 +2,7 @@
 void main()
 {
     int n,k,c=0;
-    int count=1;
+    int count=0;
     printf("Enter the no. of elements: ");
     scanf("%d",&n);
     printf("\nEnter the value of k: ");
@@ -33,20 +33,20 @@ void main()
     }
     for(int i=0;i<n;i++)
     {
-        count=1;
-        for(int j=i+1;j<n-i-1;j++)
+        for(int j=i+1;j<n;j++)
         {
-            if(a[i]==a[j])
+            if(a[j]==a[i])
             {
                 count++;
+             printf("\n%d",count);
             }
         }
-        printf("%d",count);
-        if(count>l)
+        if(count>=l)
         {
             c++;
             printf("\n%d",c);
         }
+        count=0;
     }
-    printf("The count is: %d",c);
+    printf("\n%d",c);
 }

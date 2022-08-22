@@ -1,5 +1,5 @@
 #include<stdio.h>
-void descending(int* arr,int n)
+int descending(int* arr,int n)
 {
     int c=0;
      for(int i=0;i<n;i++)
@@ -17,10 +17,12 @@ void descending(int* arr,int n)
     if(c==n)
     {
        printf("Not Possible\n");
+       return 1;
     }
+    return 0;
 }
 
-void ascending(int* arr,int n)
+int ascending(int* arr,int n)
 {
     int c=0;
     for(int i=0;i<n;i++)
@@ -36,11 +38,9 @@ void ascending(int* arr,int n)
         int t =arr[n-1];
         arr[n-1]=arr[n-2];
         arr[n-2]=t;
+        return 1;
     }
-    for(int i=0;i<n;i++)
-    {
-        printf("%d ",arr[i]);
-    }
+    return 0;
 }
 
 void swap(int* a,int* b)
@@ -59,24 +59,17 @@ int main()
         scanf("%d",&arr[i]);
     }
    descending(&arr,n);
-   ascending(&arr,n);
-    // for(int i=0;i<n;i++)
-    // {
-    //     if(arr[i]<arr[i+1])
-    //     {
-    //         c++;
-    //     }
-    // }
-    // printf("%d ",c);
-    // if(c==n)
-    // {
-    //     int t =arr[n-1];
-    //     arr[n-1]=arr[n-2];
-    //     arr[n-2]=t;
-    // }
-    // for(int i=0;i<n;i++)
-    // {
-    //     printf("%d ",arr[i]);
-    // }
-    return ;
+   if(!descending)
+   {ascending(&arr,n);}
+   if(!descending &&  !ascending)
+   {
+    int t=arr[1];
+    arr[1]=arr[n-1];
+    arr[n-1]=t;
+   }
+    for(int i=0;i<n;i++)
+    {
+        printf("%d ",arr[i]);
+    }
+    return 0 ;
 }

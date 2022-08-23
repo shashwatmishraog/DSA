@@ -1,13 +1,17 @@
 #include<stdio.h>
 #include<string.h>
 int main()
-{
-    int t=0;
+{   
+    int p=0,x=0;
     char str[100];
     gets(str);
     int t = strlen(str);
-    while(t>=0)
+    for(int i=0;i<strlen(str);i++)
     {
-            
+        if(str[i]==str[i+1])
+        {
+            p++;
+        }
     }
+    printf("\n%d",t+p);
 }
